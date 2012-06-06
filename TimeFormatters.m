@@ -93,7 +93,7 @@ static NSString *const Str_TimeComponentAbbrMinutes_M    = @"TimeComponentAbbrMi
 
 
 // Localized string accessor
-NSString *LocStr(NSString *const key) {
+static NSString *LocStr(NSString *const key) {
     return [[NSBundle mainBundle] localizedStringForKey:key value:nil table:nil];
 }
 
@@ -170,6 +170,7 @@ NSString *LocStr(NSString *const key) {
 
 - (void) dealloc {
     [formatter release];
+    [super dealloc];
 }
 
 - (NSString *) stringForObjectValue:(NSDateComponents *)components {
